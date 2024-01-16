@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\src\\Origami.WebApp.Client\\bin\\Release\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\src\\Origami.WebApp.Client\\obj\\Release\\net8.0\\compressed\\0pmjezb8hd.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\src\\Origami.WebApp.Client\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Origami.WebApp.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.Origami.WebApp.Client.props",
+      "PackagePath": "build\\Origami.WebApp.Client.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Origami.WebApp.Client.props",
+      "PackagePath": "buildMultiTargeting\\Origami.WebApp.Client.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.Origami.WebApp.Client.props",
+      "PackagePath": "buildTransitive\\Origami.WebApp.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

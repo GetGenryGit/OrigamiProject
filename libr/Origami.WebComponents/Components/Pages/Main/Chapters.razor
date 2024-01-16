@@ -1,0 +1,94 @@
+﻿@page "/course"
+@layout MainLayout
+
+@inject IAuthService UserService
+@inject ILocalStorageService LocalStorageService
+@inject ICoursesService CoursesService
+@inject NavigationManager Nav
+@inject IToastService Toast
+@inject HttpClient Http
+
+
+
+<PageTitle>Курсы</PageTitle>
+
+<div class="container-course">
+    <div class="header">
+        <h1>Главы</h1>
+
+        <hr />
+    </div>
+    @if (!isLoading)
+    {
+        @if (userDetails != null)
+        {
+            <div class="container-chapters">
+                @foreach (var item in chaptersList)
+                {
+                    <div class="chapter" @onclick="() => SelectChapter(item)">
+                        <h2>@item.Name</h2>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <h1>Для доступа к этой странице необходимо пройти авторизацию!</h1>
+        }
+    }
+    else
+    {
+        <h1>Загрузка</h1>
+    }
+
+   
+</div>
+
+@code {
+    #region [Parameters]
+
+    #endregion
+
+    #region [Properties]
+    private List<Chapter>? chaptersList;
+
+    private UserDetails? userDetails;
+
+    private bool isLoading = false;
+    #endregion
+
+    #region [SecondoryMethods]
+
+    #endregion
+
+    #region [MainMethods]
+    private void SelectChapter(Chapter item)
+    {
+
+        Nav.NavigateTo($"/course/{item.Name}");
+    }
+    #endregion
+
+    #region [OnInit]
+    protected override void OnInitialized()
+    {
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        isLoading = true;
+
+        userDetails = await LocalStorageService.GetItemAsync<UserDetails>("user");
+        if (userDetails != null)
+        {
+            var parameter = $"?login={userDetails.Login}";
+            chaptersList = await CoursesService.GetContent<List<Chapter>>(APIConstants.GetChapters, parameter);
+        }
+
+        isLoading = false;
+    }
+
+    #endregion
+}

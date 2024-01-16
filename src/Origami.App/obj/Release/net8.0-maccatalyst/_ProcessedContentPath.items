@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Content Include="Resources\Raw\AboutAssets.txt" />
+    <Content Include="C:\Users\ilyao\OrigamiProject\libr\Origami.WebComponents\wwwroot\css\app.css" />
+    <Content Include="C:\Users\ilyao\OrigamiProject\libr\Origami.WebComponents\wwwroot\css\styles.css" />
+    <Content Include="C:\Users\ilyao\OrigamiProject\libr\Origami.WebComponents\wwwroot\img\image1.png" />
+    <Content Include="C:\Users\ilyao\OrigamiProject\libr\Origami.WebComponents\wwwroot\img\image2.png" />
+    <Content Include="C:\Users\ilyao\OrigamiProject\libr\Origami.WebComponents\wwwroot\img\image3.png" />
+    <Content Include="C:\Users\ilyao\OrigamiProject\libr\Origami.WebComponents\wwwroot\img\logo.png" />
+    <Content Include="C:\Users\ilyao\OrigamiProject\src\Origami.App\wwwroot\index.html" />
+  </ItemGroup>
+</Project>

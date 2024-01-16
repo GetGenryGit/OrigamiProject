@@ -1,0 +1,115 @@
+﻿<div class="carousel">
+    <div class="images-wrapper">
+        <img src="_content/Origami.WebComponents/img/image1.png" class="image img-1 @firstContent" alt="" />
+        <img src="_content/Origami.WebComponents/img/image2.png" class="image img-2 @secondContent" alt="" />
+        <img src="_content/Origami.WebComponents/img/image3.png" class="image img-3 @thirdContent" alt="" />
+    </div>
+
+    <div class="text-slider">
+        <div class="text-wrap">
+            <div class="text-group">
+                <h2 class="@firstContent">Проходите обучающие курсы!</h2>
+                <h2 class="@secondContent">Создавайте свои курсы!</h2>
+                <h2 class="@thirdContent">Получайте экслюзивные призы!</h2>
+            </div>
+        </div>
+
+        <div class="bullets">
+            <span class="@FirstContent" @onclick="() => switchSlider(1)"></span>
+            <span class="@SecondContent" @onclick="() => switchSlider(2)"></span>
+            <span class="@ThirdContent" @onclick="() => switchSlider(3)"></span>
+        </div>
+    </div>
+</div>
+
+@code{
+    private const string activeContent = "active";
+    private int slideTimer = 8;
+
+    private string? firstContent = activeContent;
+    public string? FirstContent 
+    { get => firstContent;
+        set
+        {
+            firstContent = value;
+            StateHasChanged();
+        } 
+    }
+
+    private string? secondContent;
+    public string? SecondContent 
+    { 
+        get => secondContent;
+        set
+        {
+            secondContent = value;
+            StateHasChanged();
+        }
+    }
+
+    private string? thirdContent;
+    public string? ThirdContent 
+    { 
+        get => thirdContent; 
+        set
+        {
+            thirdContent = value;
+            StateHasChanged();
+        } 
+    }
+
+    protected override void OnInitialized()
+    {
+        var action = new Action(async () =>
+        {
+            await switchPerActiveContent();
+        });
+
+        action.Invoke();
+    }
+
+    private void switchSlider(int id)
+    {
+        switch (id)
+        {
+            case 1:
+                FirstContent = activeContent;
+                SecondContent = string.Empty;
+                ThirdContent = string.Empty;
+                break;
+            case 2:
+                FirstContent = string.Empty;
+                SecondContent = activeContent;
+                ThirdContent = string.Empty;
+                break;
+            case 3:
+                FirstContent = string.Empty;
+                SecondContent = string.Empty;
+                ThirdContent = activeContent;
+                break;
+        }
+
+        slideTimer = 8;
+    }
+
+    private async Task switchPerActiveContent()
+    {
+        while (true)
+        {
+            if (slideTimer == 0)
+            {
+                if (FirstContent == activeContent)
+                    switchSlider(2);
+                else if (SecondContent == activeContent)
+                    switchSlider(3);
+                else if (ThirdContent == activeContent)
+                    switchSlider(1);
+
+                slideTimer = 8;
+            }
+
+            await Task.Delay(1000);
+            slideTimer--;
+        }
+    }
+}

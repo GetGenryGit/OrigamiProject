@@ -1,0 +1,63 @@
+﻿@inject NavigationManager _navManager
+@inject HttpClient Http
+@inject ISessionStorageService SessionStorage
+@inject IAuthService AuthenticationService
+@inject IToastService Toast
+
+<EditForm class="sign-in-form"
+          EditContext="loginEditContext"
+          OnValidSubmit="async () => await AuthenticationService.SignIn(loginUser)"
+          autocomplete="off"
+          novalidate>
+    <DataAnnotationsValidator />
+    <div class="logo">
+        <img src="_content/Origami.WebComponents/img/logo.png" alt="Мир Оригами" />
+        <h4>Мир Оригами</h4>
+    </div>
+
+    <div class="heading">
+        <h2>Добро пожаловать!</h2>
+        <h6>У нас впервые?</h6>
+        <a class="toggle" @onclick="SwitchSignInMode">Регистрация</a>
+    </div>
+
+    <div class="actual-form">
+        <div class="input-wrap">
+            <InputText type="text"
+                       @bind-Value="loginUser.Login"
+                       autocomp
+                       class="input-field"
+                       placeholder="Логин" />
+            <ValidationMessage For="(() => loginUser.Login)" />
+        </div>
+
+        <div class="input-wrap">
+            <InputText type="password"
+                       @bind-Value="loginUser.Password"
+                       class="input-field"
+                       placeholder="Пароль" />
+            <ValidationMessage For="(() => loginUser.Password)" />
+
+        </div>
+
+        <button type="submit" class="sign-btn">Войти</button>
+
+        <p class="text">
+            Если вы забыли ваш пароль обратитесь за помощью на эту почту
+            <a>ilyaoleynik1200@gmail.com</a>
+        </p>
+    </div>
+</EditForm>
+
+@code{
+    [Parameter] public EventCallback SwitchSignInMode { get; set; }
+
+    private LoginUser? loginUser;
+    private EditContext? loginEditContext;
+
+    protected override void OnInitialized()
+    {
+        loginUser = new();
+        loginEditContext = new(loginUser);
+    }
+}

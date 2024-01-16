@@ -1,0 +1,1 @@
+C:\Users\ilyao\OrigamiProject\src\Origami.App\Origami.App.csproj;x64

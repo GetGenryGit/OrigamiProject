@@ -1,0 +1,71 @@
+﻿@inject IAuthService AuthService
+@inject ILocalStorageService LocalStorageService
+@inject IToastService ToastService
+
+<nav>
+    <ul class="menu">
+        <li class="logo">
+            <img src="_content/Origami.WebComponents/img/logo.png" alt="Мир Оригами" >
+            <a href="home">Мир Оригами</a>
+        </li>
+        <li class="item @navBarState">
+            <a href="home" @onclick="() => switchNavBar()">Главная</a>
+        </li>
+        <li class="item @navBarState">
+            <a href="course" @onclick="() => switchNavBar()">Курсы</a>
+        </li>
+        <li class="item @navBarState">
+            <a href="help" @onclick="() => switchNavBar()">Помощь</a>
+        </li>
+
+        @if (userDetails == null)
+        {
+            <li class="item button @navBarState">
+                <a href="authorization/0">Войти</a>
+            </li>
+            <li class="item button secondary @navBarState">
+                <a href="authorization/1">Регистрация</a>
+            </li>
+        }
+        else
+        {
+            <li class="item button @navBarState">
+                <a href="profile">@userDetails.Login</a>
+            </li>
+            <li class="item button secondary  @navBarState">
+                <a @onclick="async () => await AuthService.Logout(userDetails.Login)">Выйти</a>
+            </li>
+        }
+        
+        <li class="toggle">
+            <a @onclick="() => switchNavBar()"><span class="bars"></span></a>
+        </li>
+    </ul>
+   
+</nav>
+
+@code{
+    private const string activeNavBarState = "active";
+    private string navBarState = string.Empty;
+
+    private UserDetails? userDetails;
+
+    private void switchNavBar()
+    {
+        navBarState = navBarState == activeNavBarState ? string.Empty : activeNavBarState;
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        userDetails = await LocalStorageService.GetItemAsync<UserDetails>("user");
+
+    }
+
+
+}

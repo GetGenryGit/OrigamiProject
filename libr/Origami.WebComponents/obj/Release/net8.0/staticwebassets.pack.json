@@ -1,0 +1,133 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\final\\1\\1.1.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\final\\1\\1.1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\final\\2\\2.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\final\\2\\2.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\junior\\1\\1.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\junior\\1\\1.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\junior\\1\\1.3.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\junior\\1\\1.3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\junior\\2\\2.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\junior\\2\\2.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\junior\\3\\3.1.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\junior\\3\\3.1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\lead\\1\\1.1.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\lead\\1\\1.1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\lead\\1\\1.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\lead\\1\\1.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\lead\\2\\2.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\lead\\2\\2.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\lead\\3\\3.1.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\lead\\3\\3.1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\middle\\1\\1.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\middle\\1\\1.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\middle\\1\\1.3.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\middle\\1\\1.3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\middle\\2\\2.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\middle\\2\\2.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\senior\\1\\1.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\senior\\1\\1.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\senior\\2\\2.1.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\senior\\2\\2.1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\start\\1\\1.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\start\\1\\1.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\start\\2\\2.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\start\\2\\2.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\start\\2\\2.3.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\start\\2\\2.3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\start\\3\\3.1.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\start\\3\\3.1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\content\\start\\3\\3.2.jpg",
+      "PackagePath": "staticwebassets\\img\\content\\start\\3\\3.2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\image1.png",
+      "PackagePath": "staticwebassets\\img\\image1.png"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\image2.png",
+      "PackagePath": "staticwebassets\\img\\image2.png"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\image3.png",
+      "PackagePath": "staticwebassets\\img\\image3.png"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\ilyao\\OrigamiProject\\libr\\Origami.WebComponents\\wwwroot\\img\\user.png",
+      "PackagePath": "staticwebassets\\img\\user.png"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Origami.WebComponents.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.Origami.WebComponents.props",
+      "PackagePath": "build\\Origami.WebComponents.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Origami.WebComponents.props",
+      "PackagePath": "buildMultiTargeting\\Origami.WebComponents.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.Origami.WebComponents.props",
+      "PackagePath": "buildTransitive\\Origami.WebComponents.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

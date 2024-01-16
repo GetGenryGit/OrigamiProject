@@ -1,0 +1,59 @@
+﻿@page "/authorization"
+@page "/authorization/{Type:int}"
+
+@layout EmptyLayout
+
+@inject NavigationManager _Nav
+
+<PageTitle>Автроизация & Регистрация</PageTitle>
+
+<main class="@signInMode">
+    <div class="box">
+        <div class="inner-box">
+            <div class="forms-wrap">              
+                <LoginForm SwitchSignInMode="@switchSignInMode" />
+
+                <RegistrationForm SwitchSignInMode="@switchSignInMode" />  
+            </div>
+            <Carousel/>
+
+        </div>
+    </div>
+</main>
+
+@code {
+    #region [Parameters]
+    [Parameter] public int Type { get; set; }
+    #endregion
+
+    #region [Properties]
+    private const string signUpMode = "sign-up-mode";
+    private string signInMode = string.Empty;
+    #endregion
+
+    #region [SecondoryMethods]
+
+    #endregion
+
+    #region [MainMethods]
+    private void switchSignInMode()
+    {
+        signInMode = signInMode == string.Empty ? signUpMode : string.Empty;
+        StateHasChanged();
+    }
+    #endregion
+
+    #region [OnInit]
+    protected override void OnInitialized()
+    {
+        signInMode = Type == 1 ? signUpMode : string.Empty;
+        base.OnInitialized();
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        return base.OnInitializedAsync();
+    }
+    #endregion
+
+}

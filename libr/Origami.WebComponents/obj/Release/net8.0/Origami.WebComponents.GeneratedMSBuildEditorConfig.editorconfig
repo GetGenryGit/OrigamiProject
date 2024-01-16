@@ -1,0 +1,87 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows,browser
+build_property.RootNamespace = Origami.WebComponents
+build_property.RootNamespace = Origami.WebComponents
+build_property.ProjectDir = C:\Users\ilyao\OrigamiProject\libr\Origami.WebComponents\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ilyao\OrigamiProject\libr\Origami.WebComponents
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Layout/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTG9naW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Other/Carousel.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPdGhlclxDYXJvdXNlbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Other/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPdGhlclxGb290ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Other/LoginForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPdGhlclxMb2dpbkZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Other/NavBar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPdGhlclxOYXZCYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Other/RegistrationForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPdGhlclxSZWdpc3RyYXRpb25Gb3JtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Pages/Main/Chapters.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYWluXENoYXB0ZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Pages/Main/Courses.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYWluXENvdXJzZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Pages/Main/Help.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYWluXEhlbHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Pages/Main/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYWluXEhvbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Pages/Main/Levels.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYWluXExldmVscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Pages/Main/Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYWluXFByb2ZpbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Pages/StartUp/AuthorizationView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGFydFVwXEF1dGhvcml6YXRpb25WaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/Components/Pages/StartUp/RedirectView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGFydFVwXFJlZGlyZWN0Vmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ilyao/OrigamiProject/libr/Origami.WebComponents/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

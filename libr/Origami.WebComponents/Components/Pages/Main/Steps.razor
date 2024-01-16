@@ -1,0 +1,181 @@
+﻿@page "/course/{SelectedChapter}/{SelectedLevel}"
+
+@inject ICoursesService CoursesService
+@inject NavigationManager Nav
+@inject IToastService Toast
+@inject IAuthService UserService
+@inject ILocalStorageService LocalStorageService
+
+<div class="container-course">
+    <div class="header">
+        <h1>Уровень: @SelectedLevel</h1>
+
+        <hr />
+    </div>
+
+    @if (!isLoading)
+    {
+        @if (userDetails != null)
+        {
+            <div class="slider">
+                @foreach (var item in stepsList)
+                {
+
+                    <div class="content-wrapper @item.IsActive">
+                        @if (item.ImageUrl != null)
+                        {
+                            <img src="@item.ImageUrl" alt="" />
+                        }
+
+                        @if (item.VideoUrl != null)
+                        {
+                            <iframe src="@item.VideoUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        }
+
+                        @if (item.Content != null)
+                        {
+                            <h2>@item.Content</h2>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="step-selector">
+
+                <button @onclick="() => slideStep(0)">
+                    @if (activePage == 1)
+                    {
+                        <span @onclick="() => GoToChapter(0)">Вернуться</span>
+                    }
+                    else
+                    {
+                        <span>Назад</span>
+                    }
+
+                </button>
+
+                <h1>@activePage / @stepsList.Count</h1>
+
+                <button @onclick="() => slideStep(1)">
+                    @if (activePage == stepsList.Count)
+                    {
+                        <span @onclick="() => GoToChapter(1)">Закончить</span>
+                    }
+                    else
+                    {
+                        <span>Вперед</span>
+                    }
+                </button>
+
+            </div>
+        }
+        else
+        {
+            <h1>Для доступа к этой странице необходимо пройти авторизацию!</h1>
+        }
+    }
+    else
+    {
+        <h1>Загрузка</h1>
+    }
+</div>
+
+@code {
+
+    #region [Parameters]
+    [Parameter] public string? SelectedChapter { get; set; }
+    [Parameter] public string? SelectedLevel { get; set; }
+    #endregion
+
+    #region [Properties]
+    private const string activeStep = "active";
+    private int activePage;
+
+    private List<Step>? stepsList;
+
+    private UserDetails? userDetails;
+    private bool isLoading = false;
+    #endregion
+
+    #region [SecondoryMethods]
+
+    #endregion
+
+    #region [MainMethods]
+    public void slideStep(int variant)
+    {
+        if (variant == 0)
+        {
+            if (activePage == 1)
+                return;
+            else
+                activePage--;
+        }
+        else if (variant == 1)
+        {
+            if (activePage == stepsList.Count)
+                return;
+            else
+                activePage++;
+        }
+
+        foreach (var item in stepsList)
+        {
+            if (item.StepIndex == activePage)
+                item.IsActive = activeStep;
+            else
+                item.IsActive = string.Empty;
+        }
+    }
+
+    private async Task GoToChapter(int variant)
+    {
+        if (variant == 0)
+        {
+            Nav.NavigateTo($"/course/{SelectedChapter}");
+        }
+        else if (variant == 1)
+        {
+            bool isUpdateCompleteSuccess = await CoursesService.UpdateUserProgress(APIConstants.UpdateUserProgress, new ContentParameter(userDetails.Login, SelectedLevel));
+
+            if (isUpdateCompleteSuccess)
+                Nav.NavigateTo($"/course/{SelectedChapter}");
+        }
+    }
+    #endregion
+
+    #region [OnInit]
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        isLoading = true;
+
+        userDetails = await LocalStorageService.GetItemAsync<UserDetails>("user");
+        if (userDetails != null)
+        {
+            var parameter = $"?login={userDetails.Login}&level={SelectedLevel}";
+            stepsList = await CoursesService.GetContent<List<Step>>(APIConstants.GetSteps, parameter);
+            if (stepsList != null)
+            {
+                for (int i = 0; i < stepsList.Count; i++)
+                {
+                    if (stepsList[i].IsActive == activeStep)
+                    {
+                        activePage = (i + 1);
+                        break;
+                    }
+                }
+            }
+            
+        }
+       
+        isLoading = false;
+    }
+    #endregion
+
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Origami.WebApp.Client.props" />
+</Project>

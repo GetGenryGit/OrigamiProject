@@ -1,0 +1,91 @@
+﻿@page "/course/{SelectedChapter}"
+
+@inject NavigationManager Nav
+@inject IToastService Toast
+@inject ICoursesService CoursesService
+@inject IAuthService UserService
+@inject ILocalStorageService LocalStorageService
+
+<div class="container-course">
+    <div class="header">
+        <h1>Уровни главы: @SelectedChapter</h1>
+
+        <hr />
+    </div>
+
+    <div class="container-levels">
+        @if (!isLoading)
+        {
+            if (userDetails != null)
+            {
+                @foreach (var item in levelsList)
+                {
+                    <div class="level" @onclick="() => selectLevel(item)">
+                        <h1>@item.LevelIndex</h1>
+                    </div>
+                }
+            }
+            else
+            {
+                <h1>Для доступа к этой странице необходимо пройти авторизацию!</h1>
+            }
+        }
+        else
+        {
+            <h1>Загрузка</h1>
+        }
+
+    </div>
+
+</div>
+
+@code {
+    #region [Parameters]
+    [Parameter]
+    public string? SelectedChapter { get; set; }
+    #endregion
+
+    #region [Properties]
+    private List<Level>? levelsList;
+
+    private UserDetails? userDetails;
+
+    private bool isLoading = false;
+    #endregion
+
+    #region [SecondoryMethods]
+
+
+    #endregion
+
+    #region [MainMethods]
+    private void selectLevel(Level item)
+    {
+
+        Nav.NavigateTo($"/course/{SelectedChapter}/{item.Name}");
+    }
+    #endregion
+
+    #region [OnInit]
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        isLoading = true;
+
+        userDetails = await LocalStorageService.GetItemAsync<UserDetails>("user");
+        if (userDetails != null)
+        {
+            var parameter = $"?login={userDetails.Login}&chapter={SelectedChapter}";
+            levelsList = await CoursesService.GetContent<List<Level>>(APIConstants.GetLevels, parameter);
+        }   
+
+        isLoading = false;
+    }
+    
+    #endregion
+}

@@ -1,0 +1,77 @@
+﻿@inject HttpClient Http
+@inject IToastService Toast
+@inject IAuthService AuthenticationService
+
+<EditForm class="sign-up-form"
+EditContext="registrationEditContext"
+          OnValidSubmit="async () => await AuthenticationService.SignUp(registrationUser, SwitchSignInMode)"
+          autocomplete="off"
+          novalidate>
+    <DataAnnotationsValidator />
+    <div class="logo">
+        <img src="_content/Origami.WebComponents/img/logo.png" alt="Мир Оригами" />
+        <h4>Мир Оригами</h4>
+    </div>
+
+    <div class="heading">
+        <h2>Регистрация</h2>
+        <h6>Есть аккаунт?</h6>
+        <a class="toggle" @onclick="SwitchSignInMode">Авторизация</a>
+    </div>
+
+    <div class="actual-form">
+        <div class="input-wrap">
+            <InputText type="text"
+                       @bind-Value="registrationUser.Login"
+                       maxlength="64"
+                       class="input-field"
+                       placeholder="Логин" />
+            <ValidationMessage For="(() => registrationUser.Login)" />
+
+        </div>
+
+
+        <div class="input-wrap">
+            <InputText type="email"
+                       @bind-Value="registrationUser.Email"
+                       maxlength="256"
+                       class="input-field"
+                       placeholder="Почта" />
+            <ValidationMessage For="(() => registrationUser.Email)" />
+
+        </div>
+
+
+        <div class="input-wrap">
+            <InputText type="password"
+                       @bind-Value="registrationUser.Password"
+                       maxlength="256"
+                       class="input-field"
+                       placeholder="Пароль" />
+            <ValidationMessage For="(() => registrationUser.Password)" />
+
+        </div>
+
+
+        <button type="submit" class="sign-btn">Зарегистрироваться</button>
+
+        <p class="text">
+            Регистрируясь, я соглашаюсь с
+            <a>Условиями предоставления услуг</a> и
+            <a>Политикой конфиденциальности</a>.
+        </p>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter] public EventCallback SwitchSignInMode { get; set; }
+
+    private RegistrationUser? registrationUser;
+    private EditContext? registrationEditContext;
+
+    protected override void OnInitialized()
+    {
+        registrationUser = new();
+        registrationEditContext = new(registrationUser);
+    }
+}
